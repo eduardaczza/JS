@@ -4,8 +4,8 @@ function pesquisar() {
   
     let campoPesquisa = document.getElementById("campo-pesquisa").value
   //se campoP estiver vazio
-    if (campoPesquisa == ""){
-      section.innerHTML = "<p>Resultado não encontrado</p>"
+    if (!campoPesquisa){
+      section.innerHTML = "<p>Resultado não encontrado. O campo de pesquisa está vazio.</p>"
       return;
     }
 
@@ -35,7 +35,10 @@ function pesquisar() {
 
       }
     }
-  
+    
+    if (!resultados){
+      resultados = "<p>Resultado não encontrado</p>"
+    }
     // Atualiza o conteúdo da seção com os resultados gerados
     section.innerHTML = resultados;
   }
